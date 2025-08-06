@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuisine - Learn Cook & Eat your food</title>
+</head>
+<body>
+    <div class="container">
+        <!--header-->
+        <div class="logo">Cuisine</div>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search Recipes.." id="">
+            <span class="search-icon">🔍</span>
+        </div>
+    <div class="header-actions">
+        <button class="pause-btn">⏸️</button>
+        <button class="premuim-btn">Premium✨</button>
+    </div>
+    </div>
+    <!--Main Content-->
+    <div class="main-content">
+        <!--Sidebar-->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-img">TW</div>
+                <div class="profile-name">Theresa Webb</div>
+                <div class="profile-title">Master</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">120</div>
+                     <div class="stat-label">Recipes</div>
+                </div>
+            <div class="stat">
+                    <div class="stat-number">201</div>
+                     <div class="stat-label">Following</div>
+                </div>
+            </div>
+
+            <ul class="menu-items">
+                <li class="menu-item active">📖Recipes</li>
+                <li class="menu-item active">❤️Favorite</li>
+                <li class="menu-item active">📝Courses</li>
+                 <li class="menu-item active">💬Comments</li>
+            </ul>
+        </div>
+            <!--Content-->
+            <div class="content">
+            <h1 class="title">Learn,Cook,&Eat your food </h1>
+              <div class="filter-tabs">
+            <div class="filter-tab active">Pizza</div>
+            <div class="filter-tab">Dessert</div>
+            <div class="filter-tab">Noodles</div>
+            <div class="filter-tab">Cooktail</div>
+            <div class="filter-tab">Salad</div>
+            </div>
+    
+            <div class="recipe-grid">
+             <div class="recipe-card" onclick="showRecipeDetails('Special Salad Chicken')">
+             <div class="recipe-img" style="background: radial-gradient(circle ,#4caf50,#8bc34a);"></div>
+             <div class="recipe-info">
+                <div class="recipe-name">Special salad Chicken</div>
+                <div class="recipe-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">(7 Reviews)</span>
+                </div>
+                <div class="recipe-time">20 mins</div>
+                <button class="view-recipe-btn">View recipe</button>
+             </div>
+             </div>
+    
+            <div class="recipe-card" onclick="showRecipeDetails('Noodles Chicken')">
+             <div class="recipe-img" style="background: radial-gradient(circle ,#ff9800,#ff5722);"></div>
+             <div class="recipe-info">
+                <div class="recipe-name">Noodles Chicken</div>
+                <div class="recipe-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">(12 Reviews)</span>
+                </div>
+                <div class="recipe-time">30 mins</div>
+                <button class="view-recipe-btn">View recipe</button>
+             </div>
+             </div>
+
+            <div class="recipe-card" onclick="showRecipeDetails('Chicken with green veg')">
+             <div class="recipe-img" style="background: radial-gradient(circle ,#ffc107,#ff9800);"></div>
+             <div class="recipe-info">
+                <div class="recipe-name">Chicken with green veg</div>
+                <div class="recipe-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">(8 Reviews)</span>
+                </div>
+                <div class="recipe-time">25mins</div>
+                <button class="view-recipe-btn">View recipe</button>
+             </div>
+             </div>
+            
+             <div class="recipe-card" onclick="showRecipeDetails('Spicy Chicken Bowl')">
+             <div class="recipe-img" style="background: radial-gradient(circle ,#ffc107,#ff9800);"></div>
+             <div class="recipe-info">
+                <div class="recipe-name">Spicy Chicken Bowl</div>
+                <div class="recipe-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">( 15Reviews)</span>
+                </div>
+                <div class="recipe-time">35mins</div>
+                <button class="view-recipe-btn">View recipe</button>
+             </div>
+             </div>
+             <!--Featured Recipe Section-->
+             <div class="featured-section">
+                <div class="featured-recipe">
+                    <div class="featured-img"></div>
+                    <div class="featured-content">
+                        <h2>Inatant pot greek Chicken Bowls</h2>
+                        <p class="featured-description"> The fusion of techinques was cooked uoti 15 mintuesin an instant pot
+                            a quick and fillimg , authentic inspired weeknight dinner <form action=""></form></p>
+                      <div class="recipe-meta">
+                        <span>🧑‍🤝‍🧑Serving:4</span>
+                        <span>⏱️Cookin time :1 hour 30 mintuesin</span>
+                      </div>
+                      <button class="get-offer-btn">Get the offer ➡️</button>
+                    </div>
+                </div>
+
+             <!--rifg side bar-->
+             <div class="righ-side bar">
+                <div class="sidebar-recipe">
+                    <div class="sidebar-recipe-img"></div>
+                     <div class="sidebar-recipe-info">
+                        <h4>Noodle Chickem</h4>
+                        <div class="sidebar-stars">⭐⭐⭐⭐⭐(7 reviews)</div>
+
+                     </div>
+                </div>
+             <div class="get-offer-sidebar">
+                <h4>Chicken with green veg</h4>
+            <button>Get the offer ➡️</button>
+
+             </div>
+             </div>
+             </div>
+            </div>
+            </div>
+    </div>
+    <script>
+        // Search functionality
+document.querySelector('.search-box').addEventListener('input', function(e) {
+const searchTerm = e.target.value.toLowerCase();
+const recipeCards = document.querySelectorAll('.recipe-card');
+
+recipeCards.forEach(card => {
+const recipeName = card.querySelector('.recipe-name').textContent.toLowerCase();
+if (recipeName.includes(searchTerm)) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+
+// Filter tabs functionality
+document.querySelectorAll('.filter-tab').forEach(tab => {
+tab.addEventListener('click', function() {
+// Remove active class from all tabs
+document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+// Add active class to clicked tab
+this.classList.add('active');
+
+// Here you could add filtering logic based on the selected tab
+console.log('Filter selected:', this.textContent);
+});
+});
+
+// Menu items functionality
+document.querySelectorAll('.menu-item').forEach(item => {
+item.addEventListener('click', function() {
+// Remove active class from all menu items
+document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+// Add active class to clicked item
+this.classList.add('active');
+
+console.log('Menu item selected:', this.textContent);
+});
+});
+
+// Recipe card click functionality
+function showRecipeDetails(recipeName) {
+alert(`Viewing recipe: ${recipeName}\n\nThis would normally open a detailed recipe page with ingredients, instructions, and nutritional information.`);
+}
+
+// Premium button functionality
+document.querySelector('.premium-btn').addEventListener('click', function() {
+alert('Premium features coming soon! 🌟\n\nUpgrade to access exclusive recipes, meal planning tools, and ad-free browsing.');
+});
+
+// Pause button functionality
+document.querySelector('.pause-btn').addEventListener('click', function() {
+if (this.textContent === '⏸️') {
+this.textContent = '▶️';
+alert('Recipe recommendations paused');
+} else {
+this.textContent = '⏸️';
+alert('Recipe recommendations resumed');
+}
+});
+
+// Get The Offer button functionality
+document.querySelectorAll('.get-offer-btn, .get-offer-sidebar button').forEach(btn => {
+btn.addEventListener('click', function() {
+alert('Special offer: 30% off premium subscription! 🎉\n\nUse code: CHEF30');
+});
+});
+
+// View Recipe button functionality
+document.querySelectorAll('.view-recipe-btn').forEach(btn => {
+btn.addEventListener('click', function(e) {
+e.stopPropagation(); // Prevent card click event
+const recipeName = this.closest('.recipe-card').querySelector('.recipe-name').textContent;
+showRecipeDetails(recipeName);
+});
+});
+
+// Add some interactive animations
+document.querySelectorAll('.recipe-card').forEach(card => {
+card.addEventListener('mouseenter', function() {
+this.style.transform = 'translateY(-8px) scale(1.02)';
+});
+
+card.addEventListener('mouseleave', function() {
+this.style.transform = 'translateY(0) scale(1)';
+});
+});
+
+// Simulate loading more recipes
+function loadMoreRecipes() {
+const moreRecipes = [
+{ name: 'Mediterranean Bowl', time: '25 mins', rating: 4.8 },
+{ name: 'Thai Curry Chicken', time: '40 mins', rating: 4.9 },
+{ name: 'Quinoa Power Bowl', time: '20 mins', rating: 4.7 }
+];
+
+const recipeGrid = document.querySelector('.recipe-grid');
+
+moreRecipes.forEach((recipe, index) => {
+const recipeCard = document.createElement('div');
+recipeCard.className = 'recipe-card';
+recipeCard.onclick = () => showRecipeDetails(recipe.name);
+
+recipeCard.innerHTML = `
+<div class="recipe-img" style="background: radial-gradient(circle, hsl(${120 + index * 60}, 70%, 50%), hsl(${180 + index * 60}, 70%, 60%));"></div>
+<div class="recipe-info">
+<div class="recipe-name">${recipe.name}</div>
+<div class="recipe-rating">
+<span class="stars">⭐⭐⭐⭐⭐</span>
+<span class="rating-text">(${Math.floor(Math.random() * 20) + 5} Reviews)</span>
+</div>
+<div class="recipe-time">${recipe.time}</div>
+<button class="view-recipe-btn">View Recipe</button>
+</div>
+`;
+
+recipeGrid.appendChild(recipeCard);
+});
+}
+
+// Load more recipes after 3 seconds (simulated)
+setTimeout(loadMoreRecipes, 3000);
+    </script>
+</body>
+</html>
